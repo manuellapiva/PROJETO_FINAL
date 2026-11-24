@@ -1,0 +1,566 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #e3d8e8;
+  font-family: 'League Spartan', sans-serif;
+  color: #111;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filtros{
+    width:65%;
+    margin:70px auto 30px;
+    background:#4C0661;
+    border-radius:25px;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items:center;
+    gap: 30px;
+    padding:25px;
+}
+
+.filtros h2{
+    text-align:center;
+    color:white;
+    font-size:2.2rem;
+    margin-bottom:20px;
+}
+
+.filtrosContainer{
+    display:flex;
+    justify-content:center;
+    gap:70px;
+}
+
+.filtroGrupo{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.filtroGrupo label{
+    color:white;
+    text-align:center;
+}
+
+.filtroGrupo select{
+    width:270px;
+    height:40px;
+    border:none;
+    border-radius:20px;
+    background:#D8D8D8;
+    text-align:center;
+    font-size:1rem;
+    font-weight:600;
+}
+
+.questaoBox{
+    width:95%;
+    margin:0 auto 40px;
+    background:#4C0661;
+    border-radius:25px;
+    padding:20px;
+}
+
+.tags{
+    display:flex;
+    gap:20px;
+    margin-bottom:15px;
+}
+
+.tags span{
+    background:#8E31B2;
+    color:white;
+    padding:8px 35px;
+    border-radius:20px;
+    font-size:1.2rem;
+}
+
+.questaoCard{
+    background:#9330B8;
+    border-radius:25px;
+    padding:20px;
+}
+
+.enunciado{
+    color:white;
+    font-size:1.5rem;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.imagemQuestao{
+    display:flex;
+    justify-content:center;
+    margin-bottom:30px;
+    max-width:800px;
+    align-items:center;
+}
+
+.imagemQuestao img{
+    max-width:800px;
+    background:white;
+}
+
+.alternativas{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.alternativa{
+    background:#D8D8D8;
+    border:none;
+    height:60px;
+    border-radius:30px;
+    text-align:left;
+    padding-left:25px;
+    font-size:1.3rem;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.alternativa:hover{
+    background:white;
+}
+
+.btnResposta{
+    display:block;
+    margin:30px auto 10px;
+    width:230px;
+    height:55px;
+    border:none;
+    border-radius:30px;
+    background:#4C0661;
+    color:white;
+    font-size:1.4rem;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.btnResposta:hover{
+    background:#32003F;
+}
+
+.btnBuscar{
+    width:200px;
+    height:45px;
+    border:none;
+    border-radius:25px;
+    background:#b658d2;
+    color:white;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btnBuscar:hover{
+    background:#32003F;
+}
+
+.caixaResposta {
+    margin-top: 15px;
+}
+
+.respostaConteudo {
+    background: #7b2cbf;
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.respostaConteudo h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.respostaConteudo p {
+    font-size: 1.5rem;
+}
+
+.respostaConteudo hr {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    margin: 12px 0;
+}
+
+.videoaulaBox {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: #f5f7fa;
+  border: 1px solid #d9e2ec;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  width: fit-content;
+}
+
+.videoaulaTitulo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.videoaulaLink {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #7b2cbf;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.videoaulaLink:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.videoaulaLink:active {
+  transform: translateY(0);
+}
+
+.videoaulaIndisponivel {
+  margin: 0;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.contadorQuestoes {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  padding: 12px 16px;
+  background-color: #f5f5f5;
+  border-left: 5px solid #7b2cbf;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.contadorQuestoes strong {
+  color: #7b2cbf;
+  font-size: 1.1rem;
+}
+
+.divLinks {
+    display: flex;
+    gap: 20px
+}
+
+@media (max-width: 1024px) {
+
+    .filtros {
+        width: 90%;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .filtroGrupo select {
+        width: 200px;
+    }
+
+    .tags {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tags span {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
+    .enunciado {
+        font-size: 1.3rem;
+    }
+
+    .alternativa {
+        font-size: 1.1rem;
+        height: auto;
+        min-height: 55px;
+        padding: 15px 20px;
+    }
+
+    .btnResposta {
+        width: 200px;
+        font-size: 1.2rem;
+    }
+
+    .respostaConteudo h3 {
+        font-size: 2rem;
+    }
+
+    .respostaConteudo p {
+        font-size: 1.2rem;
+    }
+
+    .imagemQuestao img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .questaoBox {
+        width: 95%;
+    }
+
+    .tags {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .tags span {
+        padding: 8px 18px;
+        font-size: 1rem;
+    }
+
+    .enunciado {
+        font-size: 1.25rem;
+    }
+
+    .alternativa {
+        font-size: 1.1rem;
+        min-height: 60px;
+        height: auto;
+        padding: 15px 20px;
+    }
+
+    .contadorQuestoes {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+        width: 80%;
+        margin-bottom: 18px;
+    }
+
+    .contadorQuestoes strong {
+        font-size: 1rem;
+    }
+    
+}
+
+@media (max-width: 768px) {
+
+    .filtrosContainer {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .filtros {
+        width: 100%;
+        margin: 30px 0;
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 15px;
+    }
+
+    .filtroGrupo {
+        width: 100%;
+    }
+
+    .filtroGrupo label {
+        text-align: left;
+        margin-left: 10px;
+    }
+
+    .filtroGrupo select {
+        width: 100%;
+    }
+
+    .btnBuscar {
+        width: 100%;
+    }
+
+    .questaoBox {
+        width: 98%;
+        padding: 15px;
+    }
+
+    .questaoCard {
+        padding: 15px;
+    }
+
+    .tags {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .tags span {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    .enunciado {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .imagemQuestao {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .imagemQuestao img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .alternativa {
+        font-size: 1rem;
+        height: auto;
+        min-height: 55px;
+        padding: 15px;
+        border-radius: 18px;
+    }
+
+    .btnResposta {
+        width: 100%;
+        font-size: 1.1rem;
+        height: 50px;
+    }
+
+    .respostaConteudo {
+        padding: 12px;
+    }
+
+    .respostaConteudo h3 {
+        font-size: 1.5rem;
+    }
+
+    .respostaConteudo p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+        .questaoBox {
+        width: 98%;
+        padding: 12px;
+        border-radius: 18px;
+    }
+
+    .questaoCard {
+        padding: 12px;
+        border-radius: 18px;
+    }
+
+    .tags {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .tags span {
+        width: 100%;
+        text-align: center;
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .enunciado {
+        font-size: 1rem;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    .alternativas {
+        gap: 10px;
+    }
+
+    .alternativa {
+        min-height: 55px;
+        height: auto;
+        padding: 12px 15px;
+        font-size: 0.95rem;
+        border-radius: 15px;
+    }
+
+    .btnResposta {
+        width: 100%;
+        height: 50px;
+        font-size: 1rem;
+    }
+
+    .respostaConteudo {
+        padding: 15px;
+    }
+
+    .respostaConteudo h3 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .respostaConteudo p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .contadorQuestoes {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+        text-align: center;
+        width: 80%;
+        border-left-width: 4px;
+        margin-bottom: 15px;
+    }
+
+    .contadorQuestoes strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 1.1rem;
+    }
+}
+
+
+.alternativaSelecionada {
+  outline: 3px solid #4c0661;
+  background: #ffffff;
+  font-weight: 700;
+}
+
+.alternativaCorreta {
+  outline: 3px solid #238636;
+  background: #d8f3dc;
+}
+
+.alternativaIncorreta {
+  outline: 3px solid #b42318;
+  background: #ffe0dc;
+}
+
+.alternativa:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.btnResposta:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.erroQuestao {
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+  margin: 12px 0;
+}
