@@ -1,0 +1,108 @@
+.footer {
+  width: 100%;
+  background: #2f003d;
+  color: white;
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 50px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.footerLogo h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 67px;
+    font-weight:400;
+    margin-bottom:30px;
+}
+
+.footerColumn h4 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.footerColumn p {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.logoutButton {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: 'League Spartan', sans-serif;
+  transition: 0.3s;
+}
+
+.logoutButton:hover {
+  color: #8eff3f;
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 40px 30px;
+    gap: 30px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footerLogo h2 {
+    font-size: 50px;
+  }
+
+  .footerColumn h4 {
+    font-size: 24px;
+  }
+
+  .footerColumn p {
+    font-size: 18px;
+  }
+
+  .logoutButton {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 20px;
+    gap: 25px;
+  }
+
+  .footerLogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footerLogo h2 {
+    font-size: 38px;
+    margin-bottom: 15px;
+  }
+
+  .footerColumn {
+    width: 100%;
+  }
+
+  .footerColumn h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .footerColumn p {
+    font-size: 16px;
+    margin-bottom: 6px;
+    word-break: break-word;
+  }
+
+  .logoutButton {
+    font-size: 15px;
+  }
+}
