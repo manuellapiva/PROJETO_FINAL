@@ -90,3 +90,92 @@ export default function QuestaoCard({ questao }) {
             } else if (mostrarResposta && letra === selecionada && !acertou) {
               classe += ` ${styles.alternativaIncorreta || ''}`;
             }
+
+            
+            return (
+              <button
+                key={letra}
+                type="button"
+                className={classe}
+                onClick={() => {
+                  if (!mostrarResposta) {
+                    setSelecionada(letra);
+                    setErro('');
+                  }
+                }}
+                disabled={mostrarResposta}
+                aria-pressed={selecionada === letra}
+              >
+                {texto}
+              </button>
+            );
+          })}
+        </div>
+
+        <button
+          type="button"
+          className={styles.btnResposta}
+          onClick={conferirResposta}
+          disabled={carregando}
+        >
+          {carregando
+            ? 'CORRIGINDO...'
+            : mostrarResposta ? 'OCULTAR CORREÇÃO' : 'CONFERIR RESPOSTA'}
+        </button>
+
+        {erro && <p className={styles.erroQuestao} role="alert">{erro}</p>}
+
+        {mostrarResposta && resposta && (
+          <section className={styles.caixaResposta} aria-live="polite">
+            <div className={styles.respostaConteudo}>
+              <h3>{acertou ? 'Muito bem! Você acertou.' : 'Vamos revisar esta questão.'}</h3>
+              <p><strong>Gabarito:</strong> {resposta.resp_correta}</p>
+              {!letraCorreta && (
+                <p>Não foi possível identificar automaticamente a letra do gabarito. Confira o texto acima.</p>
+              )}
+              <hr />
+              <p>{resposta.explicacao_prof || 'Não há explicação cadastrada para esta questão.'}</p>
+
+              <div className={styles.divLinks}>
+                {resposta.videoaula ? (
+                  <div className={styles.videoaulaBox}>
+                    <p className={styles.videoaulaTitulo}>Videoaula</p>
+                    <a
+                      href={resposta.videoaula.trim()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.videoaulaLink}
+                    >
+                      Assistir videoaula
+                    </a>
+                  </div>
+                ) : (
+                  <div className={styles.videoaulaBox}>
+                    <p className={styles.videoaulaIndisponivel}>Videoaula não disponível para esta questão.</p>
+                  </div>
+                )}
+                {resposta.contas_url ? (
+                  <div className={styles.videoaulaBox}>
+                    <p className={styles.videoaulaTitulo}>Contas</p>
+                    <a
+                      href={resposta.contas_url.trim()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.videoaulaLink}
+                    >
+                      Ver Contas
+                    </a>
+                  </div>
+                ) : (
+                  <div className={styles.videoaulaBox}>
+                    <p className={styles.videoaulaIndisponivel}>Contas não disponíveis para esta questão.</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
+      </div>
+    </article>
+  );
+}
